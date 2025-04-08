@@ -124,9 +124,10 @@ public class AppDelivery {
         frameTrabalhador.setLayout(new BorderLayout());
 
         JPanel panelTrabalhador = new JPanel();
-        panelTrabalhador.setLayout(new GridLayout(3, 1));
+        panelTrabalhador.setLayout(new GridLayout(4, 1));
 
         JButton btnAdicionarSabor = new JButton("Adicionar Sabor");
+        JButton btnAcompanharPedidos = new JButton("Acompanhar Pedidos");
         JButton btnAtualizarStatus = new JButton("Atualizar Status do Pedido");
         JButton btnVoltar = new JButton("Voltar");
 
@@ -158,6 +159,15 @@ public class AppDelivery {
             }
         });
 
+        btnAcompanharPedidos.addActionListener(e -> {
+            List<String> pedidos = pizzaria.getPedidos();
+            StringBuilder pedidosStr = new StringBuilder("Status dos Pedidos:\n");
+            for (String pedido : pedidos) {
+                pedidosStr.append(pedido).append("\n");
+            }
+            JOptionPane.showMessageDialog(frameTrabalhador, pedidosStr.toString());
+        });
+
         btnAtualizarStatus.addActionListener(e -> {
             String input = JOptionPane.showInputDialog(frameTrabalhador, "Digite o número do pedido:");
             if (input != null && !input.isEmpty()) {
@@ -178,6 +188,7 @@ public class AppDelivery {
         btnVoltar.addActionListener(e -> frameTrabalhador.dispose());
 
         panelTrabalhador.add(btnAdicionarSabor);
+        panelTrabalhador.add(btnAcompanharPedidos);
         panelTrabalhador.add(btnAtualizarStatus);
         panelTrabalhador.add(btnVoltar);
 
@@ -191,11 +202,10 @@ public class AppDelivery {
         frameUsuario.setLayout(new BorderLayout());
 
         JPanel panelUsuario = new JPanel();
-        panelUsuario.setLayout(new GridLayout(4, 1));
+        panelUsuario.setLayout(new GridLayout(3, 1));
 
         JButton btnVerCardapio = new JButton("Ver Cardápio");
         JButton btnFazerPedido = new JButton("Fazer Pedido");
-        JButton btnAcompanharPedidos = new JButton("Acompanhar Pedidos");
         JButton btnVoltar = new JButton("Voltar");
 
         btnVerCardapio.addActionListener(e -> {
@@ -243,20 +253,12 @@ public class AppDelivery {
             }
         });
 
-        btnAcompanharPedidos.addActionListener(e -> {
-            List<String> pedidos = pizzaria.getPedidos();
-            StringBuilder pedidosStr = new StringBuilder("Status dos Pedidos:\n");
-            for (String pedido : pedidos) {
-                pedidosStr.append(pedido).append("\n");
-            }
-            JOptionPane.showMessageDialog(frameUsuario, pedidosStr.toString());
-        });
+
 
         btnVoltar.addActionListener(e -> frameUsuario.dispose());
 
         panelUsuario.add(btnVerCardapio);
         panelUsuario.add(btnFazerPedido);
-        panelUsuario.add(btnAcompanharPedidos);
         panelUsuario.add(btnVoltar);
 
         frameUsuario.add(panelUsuario, BorderLayout.CENTER);
