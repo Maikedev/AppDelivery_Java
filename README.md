@@ -34,24 +34,24 @@ Um sistema completo para gerenciamento de pedidos de pizzaria com interface grá
    GRANT ALL PRIVILEGES ON pizzaria_db.* TO 'pizzaria_user'@'localhost';
    FLUSH PRIVILEGES;
 2. **Importe as tabelas**:
-  ```sql
-  USE pizzaria_db;
+   ```sql
+   USE pizzaria_db;
+   
+   CREATE TABLE sabores (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       nome VARCHAR(50) NOT NULL,
+       preco DECIMAL(10, 2) NOT NULL
+   );
+   
+   CREATE TABLE pedidos (
+       id INT AUTO_INCREMENT PRIMARY KEY,
+       sabor_id INT NOT NULL,
+       status VARCHAR(20) DEFAULT 'Em espera',
+       data_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+       FOREIGN KEY (sabor_id) REFERENCES sabores(id)
+   );
   
-  CREATE TABLE sabores (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      nome VARCHAR(50) NOT NULL,
-      preco DECIMAL(10, 2) NOT NULL
-  );
-  
-  CREATE TABLE pedidos (
-      id INT AUTO_INCREMENT PRIMARY KEY,
-      sabor_id INT NOT NULL,
-      status VARCHAR(20) DEFAULT 'Em espera',
-      data_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY (sabor_id) REFERENCES sabores(id)
-  );
-
-  ```
+   ```
 
 ## 🛠 Tecnologias Utilizadas
 
