@@ -19,16 +19,6 @@ Um sistema completo para gerenciamento de pedidos de pizzaria com interface grá
   - ❌ Remoção de pedidos concluídos
   - 📊 Acompanhamento de todos os pedidos
 
-## 🛠 Tecnologias Utilizadas
-
-| Tecnologia        | Descrição                         |
-|-------------------|-----------------------------------|
-| IDE               | Visual Studio Code                |
-| Java 21           | Linguagem principal do sistema    |
-| Java Swing        | Interface gráfica                 |
-| MySQL 8.0         | Banco de dados relacional         |
-| JDBC              | Conexão com o banco de dados      |
-
 ## 🚀 Como Executar
 
 ### Pré-requisitos
@@ -36,17 +26,18 @@ Um sistema completo para gerenciamento de pedidos de pizzaria com interface grá
 - MySQL Server 8.0
 - MySQL Connector/J (Na pasta lib)
 
-### Configuração do Banco de Dados
+### Passo a Passo
+1. **Configure o banco de dados**:
+   ```sql
+   CREATE DATABASE pizzaria_db;
+   CREATE USER 'pizzaria_user'@'localhost' IDENTIFIED BY 'senha_segura';
+   GRANT ALL PRIVILEGES ON pizzaria_db.* TO 'pizzaria_user'@'localhost';
+   FLUSH PRIVILEGES;
+Importe as tabelas:
 
 ```sql
-CREATE DATABASE pizzaria_db;
-CREATE USER 'pizzaria_user'@'localhost' IDENTIFIED BY 'senha_segura';
-GRANT ALL PRIVILEGES ON pizzaria_db.* TO 'pizzaria_user'@'localhost';
-FLUSH PRIVILEGES;
-
 USE pizzaria_db;
 
--- Criação das tabelas
 CREATE TABLE sabores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
@@ -62,6 +53,35 @@ CREATE TABLE pedidos (
 );
 
 ```
+
+## 🛠 Tecnologias Utilizadas
+
+| Tecnologia        | Descrição                         |
+|-------------------|-----------------------------------|
+| IDE               | Visual Studio Code                |
+| Java 21           | Linguagem principal do sistema    |
+| Java Swing        | Interface gráfica                 |
+| MySQL 8.0         | Banco de dados relacional         |
+| JDBC              | Conexão com o banco de dados      |
+
+## Estrutura dos Arquivos
+
+pizzaria-delivery/
+├── src/
+│   ├── AppDelivery.java         # Classe principal (GUI)
+│   ├── Pizzaria.java            # Lógica de negócios
+│   ├── Pizza.java               # Modelo de dados
+│   ├── DatabaseConnection.java  # Conexão com BD
+│   └── pingPong/                # Jogo integrado
+│       ├── Pong.java            # Lógica do jogo
+│       ├── Bola.java            # Componente do jogo
+│       └── ...                  
+├── lib/                         # Dependências
+│   └── mysql-connector-java-8.0.xx.jar
+├── database/
+│   └── setup.sql               # Script SQL inicial
+└── README.md                   # Este arquivo
+
 ## Feito Por:
 - Maike Martins
 - Cauã Castro
