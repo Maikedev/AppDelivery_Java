@@ -69,18 +69,14 @@ Um sistema completo para gerenciamento de pedidos de pizzaria com interface grá
 pizzaria-delivery/
 ├── src/
 │   ├── AppDelivery.java          # Classe principal (GUI)
-│   ├── Pizzaria.java             # Lógica de negócios
-│   ├── Pizza.java                # Modelo de dados
 │   ├── DatabaseConnection.java   # Conexão com BD
 │   └── pingPong/                 # Jogo integrado
 │       ├── Pong.java             # Lógica do jogo
 │       ├── Bola.java             # Componente do jogo
-│       ├── Jogador.java
-│       └── Inimigo.java
+│       ├── Jogador.java          # Componente do jogo
+│       └── Inimigo.java          # Componente do jogo
 ├── lib/                          # Dependências
 │   └── mysql-connector-java-8.0.xx.jar
-├── database/
-│   └── setup.sql                # Script SQL inicial
 └── README.md                    # Documentação
 ```
 
