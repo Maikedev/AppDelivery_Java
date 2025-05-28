@@ -1,4 +1,4 @@
-# 🍕 Pizzaria Delivery - Sistema de Gerenciamento
+# Pizzaria Delivery - Sistema de Gerenciamento
 
 ![Java](https://img.shields.io/badge/Java-21-orange)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
@@ -6,20 +6,20 @@
 
 Um sistema completo para gerenciamento de pedidos de pizzaria com interface gráfica e banco de dados.
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - **Área do Cliente**
-  - 📝 Visualização do cardápio completo
-  - 🛒 Realização de pedidos
-  - 🎮 Jogo de Ping Pong enquanto aguarda
+  - Visualização do cardápio completo
+  - Realização de pedidos
+  - Jogo de Ping Pong enquanto aguarda
 
 - **Área do Trabalhador**
-  - ➕ Adição de novos sabores
-  - 🔄 Atualização de status dos pedidos
-  - ❌ Remoção de pedidos concluídos
-  - 📊 Acompanhamento de todos os pedidos
+  - Adição de novos sabores
+  - Atualização de status dos pedidos
+  - Remoção de pedidos concluídos
+  - Acompanhamento de todos os pedidos
 
-## 🚀 Como Executar
+## Como Executar
 
 ### Pré-requisitos
 - Java JDK 21
@@ -64,7 +64,7 @@ Um sistema completo para gerenciamento de pedidos de pizzaria com interface grá
 | MySQL 8.0         | Banco de dados relacional         |
 | JDBC              | Conexão com o banco de dados      |
 
-## 📁 Estrutura dos Arquivos
+## Estrutura dos Arquivos
 
 ```plaintext
 pizzaria-delivery/
