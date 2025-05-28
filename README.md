@@ -25,6 +25,7 @@ Um sistema completo para gerenciamento de pedidos de pizzaria com interface grá
 - Java JDK 21
 - MySQL Server 8.0
 - MySQL Connector/J (Na pasta lib)
+- MySQL Workbench
 
 ### Passo a Passo
 1. **Configure o banco de dados**:
