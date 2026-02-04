@@ -83,6 +83,3 @@ pizzaria-delivery/
 
 ## Feito Por:
 - Maike Martins
-- Cauã Castro
-- Guilherm Nunes
-- Pedro Nonato
